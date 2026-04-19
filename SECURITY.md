@@ -2,33 +2,24 @@
 
 ## Supported Versions
 
-Specifically, for the versions of the project that are currently supported with security updates.
-
 | Version | Supported          |
 | ------- | ------------------ |
 | 0.1.x   | :white_check_mark: |
-| < 0.1   | :x:                |
 
 ## Reporting a Vulnerability
 
-We take the security of Cellular Council Architecture seriously. If you believe you have found a security vulnerability in this project, please report it to us as described below.
+If you discover a security vulnerability in CCA Framework, please report it responsibly:
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+1. **Do NOT** open a public GitHub issue
+2. Email the maintainer directly (see pyproject.toml for contact)
+3. Include a description of the vulnerability and steps to reproduce
+4. Allow reasonable time for a fix before public disclosure
 
-Instead, please report them via email to **keskinoglu.hakan336@gmail.com**.
+## Security Considerations
 
-Please include the following information in your report:
+CCA Framework interacts with LLM backends (Ollama, OpenAI, Anthropic). When deploying:
 
-- Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
-- Full paths of source file(s) related to the manifestation of the issue
-- The location of the affected code (tag/branch/commit or direct URL)
-- Any special configuration required to reproduce the issue
-- Step-by-step instructions to reproduce the issue
-- Proof-of-concept or exploit code (if possible)
-- Impact of the issue, including how an attacker might exploit the issue
-
-We will acknowledge receipt of your vulnerability report within 48 hours and provide a follow-up with our intended next steps within 5 business days.
-
-## Patching
-
-Once a vulnerability is confirmed, we will work on a fix and release it as soon as possible. We will also coordinate with the reporter on any public disclosure of the vulnerability.
+- **Air-gapped environments**: Use Ollama backend only — no external API calls
+- **API keys**: Never commit API keys; use environment variables
+- **Prompt injection**: Cell system prompts should be treated as security boundaries
+- **Data sensitivity**: Council deliberation logs may contain sensitive decision data
