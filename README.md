@@ -7,10 +7,8 @@
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/cellular-council.svg)](https://pypi.org/project/cellular-council/)
-[![Tests](https://github.com/HakanKeskinoglu/cellular-council/actions/workflows/test.yml/badge.svg)](https://github.com/HakanKeskinoglu/cellular-council/actions)
 
-[Documentation](https://cellular-council.readthedocs.io) · [Examples](examples/) · [Discord](#community)
+[Examples](examples/)
 
 </div>
 
@@ -60,7 +58,7 @@ The framework draws from two domains:
 - **📊 Decision Traceability** — Every decision includes full reasoning chains, confidence scores, and dissenting views
 - **⚡ Async-First** — Built on asyncio for concurrent cell execution
 - **🧩 Plugin Architecture** — Drop in any LLM backend (Ollama, OpenAI, Anthropic, or custom)
-- **🏥 Cell Health Monitoring** — Automatic degradation detection and recovery
+- **🏥 Cell Health Monitoring *(planned)* — Automatic degradation detection and recovery
 
 ---
 
@@ -272,13 +270,13 @@ council.add_custom_cell(compliance_cell)
 - [x] Multi-round debate mechanism
 - [x] LLM backends: Ollama, OpenAI, Anthropic
 - [x] AlertMind reference implementation
-- [ ] Synapse visualization layer (WebSocket)
-- [ ] Stem cell differentiation engine
-- [ ] Cell health monitoring dashboard
+- [x] Synapse visualization layer (WebSocket)
+- [x] Stem cell differentiation engine
+- [x] Cell health monitoring dashboard
 - [ ] Flutter mobile app template
-- [ ] Async streaming decisions
+- [x] Async streaming decisions
 - [ ] PyPI publication
-- [ ] Docker compose deployment
+- [x] Docker compose deployment
 
 ---
 
