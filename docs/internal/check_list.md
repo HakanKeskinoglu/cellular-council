@@ -39,7 +39,7 @@ cellular-council/
 README.md ve pyproject.toml içindeki placeholder'ları düzelt:
 
 - [ ] `HakanKeskinoglu` → senin GitHub kullanıcı adın
-- [ ] `hakan@cellular-council.dev` → gerçek email adresin
+- [ ] `keskinoglu.hakan336@gmail.com` → gerçek email adresin
 - [ ] pyproject.toml'daki URL'leri güncelle
 - [ ] README.md'deki badge URL'lerini güncelle
 

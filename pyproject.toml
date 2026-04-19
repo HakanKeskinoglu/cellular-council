@@ -9,7 +9,7 @@ description = "A hierarchical multi-agent AI decision-making framework inspired 
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [
-  { name = "Hakan", email = "hakan@cellular-council.dev" },
+  { name = "Hakan", email = "keskinoglu.hakan336@gmail.com" },
 ]
 keywords = [
   "multi-agent",
