@@ -58,7 +58,7 @@ The framework draws from two domains:
 - **📊 Decision Traceability** — Every decision includes full reasoning chains, confidence scores, and dissenting views
 - **⚡ Async-First** — Built on asyncio for concurrent cell execution
 - **🧩 Plugin Architecture** — Drop in any LLM backend (Ollama, OpenAI, Anthropic, or custom)
-- **🏥 Cell Health Monitoring *(planned)* — Automatic degradation detection and recovery
+- **🏥 Cell Health Monitoring** *(planned)* — Automatic degradation detection and recovery
 
 ---
 
@@ -271,10 +271,10 @@ council.add_custom_cell(compliance_cell)
 - [x] LLM backends: Ollama, OpenAI, Anthropic
 - [x] AlertMind reference implementation
 - [x] Synapse visualization layer (WebSocket)
-- [x] Stem cell differentiation engine
-- [x] Cell health monitoring dashboard
+- [ ] Stem cell differentiation engine
+- [ ] Cell health monitoring dashboard
 - [ ] Flutter mobile app template
-- [x] Async streaming decisions
+- [ ] Async streaming decisions
 - [ ] PyPI publication
 - [x] Docker compose deployment
 

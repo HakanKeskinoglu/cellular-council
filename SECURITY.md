@@ -11,7 +11,7 @@
 If you discover a security vulnerability in CCA Framework, please report it responsibly:
 
 1. **Do NOT** open a public GitHub issue
-2. Email the maintainer directly (see pyproject.toml for contact)
+2. Email the maintainer directly at **keskinoglu.hakan336@gmail.com**
 3. Include a description of the vulnerability and steps to reproduce
 4. Allow reasonable time for a fix before public disclosure
 
