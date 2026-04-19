@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCA Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>🧬 CCA Health & Operations Dashboard</h1>
+        <div id="connection-status" class="status-disconnected">Disconnected</div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Live Council Activity -->
+        <div class="panel">
+            <h2>Live Council Activity</h2>
+            <div id="council-info">Waiting for deliberation to start...</div>
+            <div class="metrics">
+                <div class="metric-card">
+                    <span class="metric-value" id="val-round">-</span>
+                    <span class="metric-label">Current Round</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value" id="val-cells">-</span>
+                    <span class="metric-label">Active Cells</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value" id="val-msgs">0</span>
+                    <span class="metric-label">Messages</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Decision -->
+        <div class="panel">
+            <h2>Latest Decision</h2>
+            <div id="decision-panel">
+                <p>No decision reached yet.</p>
+            </div>
+        </div>
+
+        <!-- Cell Health Status -->
+        <div class="panel full-width">
+            <h2>Cell Network Status</h2>
+            <div id="cell-grid" class="cell-grid">
+                <!-- Cells will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Event Timeline -->
+        <div class="panel full-width">
+            <h2>Synapse Event Timeline</h2>
+            <div class="timeline" id="event-timeline">
+                <!-- Events will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

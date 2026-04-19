@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # Local LLM backend
+  ollama:
+    image: ollama/ollama:latest
+    container_name: cca_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # Note: You still need to shell into this container to pull models
+    # `docker exec -it cca_ollama ollama pull llama3.2`
+
+  # CCA processing node
+  cca:
+    build: .
+    container_name: cca_node
+    depends_on:
+      - ollama
+    environment:
+      # If using localhost in code, inside docker it needs to point to the ollama service
+      - OLLAMA_HOST=http://ollama:11434
+    # Runs the CLI info command and exits by default.
+    # To run a council, override the command:
+    # command: ["deliberate", "--model", "llama3.2", "Should we deploy to production on Friday?"]
+    command: ["info"]
+
+  # Optional Dashboard Node (requires Phase 6 Dashboard implementation)
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    container_name: cca_dashboard
+    ports:
+      - "8080:8080"
+    depends_on:
+      - cca
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    # Ensure it only restarts if manually started, since it might fail if Dashboard
+    # is not yet built.
+    restart: "no"
+
+volumes:
+  ollama_data:

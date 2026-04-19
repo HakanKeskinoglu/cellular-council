@@ -1,0 +1,19 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY pyproject.toml .
+COPY cca/ cca/
+
+# Install the framework with the 'viz' group which includes websockets
+# We also install aiohttp for serving the dashboard static files
+RUN pip install --no-cache-dir ".[viz]" aiohttp
+
+# Create a non-root user
+RUN useradd -m ccauser
+USER ccauser
+
+EXPOSE 8080 8765
+
+# Start the dashboard server
+CMD ["python", "-m", "cca.dashboard.server"]

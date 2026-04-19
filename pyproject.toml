@@ -1,0 +1,93 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cellular-council"
+version = "0.1.0"
+description = "A hierarchical multi-agent AI decision-making framework inspired by biological cell specialization and corporate governance"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Hakan", email = "hakan@cellular-council.dev" },
+]
+keywords = [
+  "multi-agent",
+  "ai",
+  "decision-making",
+  "llm",
+  "consensus",
+  "hierarchical",
+  "autonomous-agents",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.0",
+  "httpx>=0.25.0",
+  "structlog>=23.0.0",
+  "rich>=13.0.0",
+  "tenacity>=8.0.0",
+  "python-ulid>=2.0.0",
+  "click>=8.0.0",
+]
+
+[project.optional-dependencies]
+ollama = ["ollama>=0.1.0"]
+openai = ["openai>=1.0.0"]
+anthropic = ["anthropic>=0.20.0"]
+viz = ["websockets>=12.0"]
+dev = [
+  "pytest>=7.0",
+  "pytest-asyncio>=0.23",
+  "pytest-cov>=4.0",
+  "ruff>=0.1.0",
+  "mypy>=1.0",
+  "pre-commit>=3.0",
+]
+all = ["cellular-council[ollama,openai,anthropic,dev]"]
+
+[project.urls]
+Homepage = "https://github.com/HakanKeskinoglu/cellular-council"
+Documentation = "https://cellular-council.readthedocs.io"
+Repository = "https://github.com/HakanKeskinoglu/cellular-council"
+Issues = "https://github.com/HakanKeskinoglu/cellular-council/issues"
+
+[project.scripts]
+cca = "cca.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cca"]
+
+[tool.hatch.version]
+path = "cca/__init__.py"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "N", "UP", "ANN", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "--cov=cca --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["cca"]
+omit = ["*/tests/*"]
