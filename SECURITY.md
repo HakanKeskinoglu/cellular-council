@@ -15,7 +15,7 @@ We take the security of Cellular Council Architecture seriously. If you believe 
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Instead, please report them via email to **hakan@cellular-council.dev**.
+Instead, please report them via email to **keskinoglu.hakan336@gmail.com**.
 
 Please include the following information in your report:
 
